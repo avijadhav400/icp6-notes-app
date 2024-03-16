@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.css";
+import NoteCard from "../components/NoteCard/NoteCard";
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
@@ -17,17 +18,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Home</h1>
-      {notes.map((note, index) => {
-        return <div>
-        <h1>{note.title}</h1>
-        <p>{note.content}</p>
-        <p>{note.category}</p>
-        </div>
-      })}
-    </div>
-  );
+  <div>
+<h1 className="app-header">Home</h1>
+{
+  notes.map((note, index)=>{
+    const{_id, title, content, category}=note;
+return (<NoteCard key={_id}  title={title} content={content} category={category}/>)
+  })
+}
+ 
+  
+  </div>);
 };
 
 export default Home;
