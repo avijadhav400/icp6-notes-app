@@ -18,17 +18,22 @@ const Home = () => {
   }, []);
 
   return (
-  <div>
-<h1 className="app-header">Home</h1>
-{
-  notes.map((note, index)=>{
-    const{_id, title, content, category}=note;
-return (<NoteCard key={_id}  title={title} content={content} category={category}/>)
-  })
-}
- 
-  
-  </div>);
+    <div>
+      <h1 className="app-header">All Notes</h1>
+      {notes.map((note, index) => {
+        const { _id, title, content, category } = note;
+        return (
+          <NoteCard
+            key={_id}
+            title={title}
+            content={content}
+            category={category}
+            loadNotes={loadNotes}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default Home;

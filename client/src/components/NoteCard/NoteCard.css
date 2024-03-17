@@ -1,7 +1,35 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);;
+}
+
 .note-card{
     border: 1px solid black;
     padding: 5px 20px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px gray;
+    position: relative;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+
+.note-card-category{
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.delete-icon{
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+
 }
