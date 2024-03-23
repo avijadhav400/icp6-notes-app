@@ -14,7 +14,7 @@ const UpdateNote = () => {
   const loadNote = async (id) => {
     if (!id) return;
 
-    const response = await axios.get(`http://localhost:5000/notes/${id}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/notes/${id}`);
 
     setTitle(response.data.data.title);
     setCategory(response.data.data.category);
@@ -22,7 +22,7 @@ const UpdateNote = () => {
   };
 
   const updateNote = async()=>{
-    const response = await axios.put(`http://localhost:5000/notes/${id}`, {
+    const response = await axios.put(`${process.env.REACT_APP_API_URL}/notes/${id}`, {
       title: title,
       category: category,
       content: content

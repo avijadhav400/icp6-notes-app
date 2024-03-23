@@ -23,7 +23,6 @@ const Home = () => {
   return (
     <div>
       <h1 className="app-header">All Notes</h1>
-      {/* <button className="add-note-btn" onClick={()=>{window.location.href='/new'}}>Add Note</button> */}
        <button className="add-note-btn"
         onClick={nevigateToNew}>Add Note</button>
       {notes.map((note, index) => {
