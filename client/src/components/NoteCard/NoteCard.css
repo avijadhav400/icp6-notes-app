@@ -33,3 +33,62 @@ body{
     cursor: pointer;
 
 }
+
+.update-icon{
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .note-card {
+        padding: 8px;
+    }
+
+    .note-card-category {
+        padding: 3px 10px;
+        font-size: 0.9em;
+    }
+
+    .delete-icon,
+    .update-icon {
+        height: 25px;
+        bottom: 3px;
+    }
+
+    .delete-icon {
+        right: 5px;
+    }
+
+    .update-icon {
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .note-card {
+        margin: 5px;
+        margin-bottom: 20px;
+    }
+
+    .note-card-category {
+        padding: 2px 8px;
+        font-size: 0.8em;
+    }
+
+    .delete-icon,
+    .update-icon {
+        height: 20px;
+    }
+
+    .delete-icon {
+        right: 3px;
+    }
+
+    .update-icon {
+        right: 30px;
+    }
+}

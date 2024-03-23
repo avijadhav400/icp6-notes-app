@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.css";
-import NoteCard from "../components/NoteCard/NoteCard";
+import NoteCard from "../../components/NoteCard/NoteCard";
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
@@ -9,10 +9,13 @@ const Home = () => {
   const loadNotes = async () => {
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/notes`);
 
-    console.log(response.data.data);
+    
     setNotes(response.data.data);
   };
 
+  const nevigateToNew= ()=>{
+    window.location.href='/new'
+  }
   useEffect(() => {
     loadNotes();
   }, []);
@@ -20,6 +23,9 @@ const Home = () => {
   return (
     <div>
       <h1 className="app-header">All Notes</h1>
+      {/* <button className="add-note-btn" onClick={()=>{window.location.href='/new'}}>Add Note</button> */}
+       <button className="add-note-btn"
+        onClick={nevigateToNew}>Add Note</button>
       {notes.map((note, index) => {
         const { _id, title, content, category } = note;
         return (
@@ -29,6 +35,7 @@ const Home = () => {
             content={content}
             category={category}
             loadNotes={loadNotes}
+            _id={_id}
           />
         );
       })}
