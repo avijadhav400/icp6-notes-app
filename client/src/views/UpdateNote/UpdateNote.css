@@ -4,7 +4,6 @@
 
 .form{
     background-color: white;
-    border: 1px solid red;
     width: 450px;
     display: flex;
     flex-direction: column;
